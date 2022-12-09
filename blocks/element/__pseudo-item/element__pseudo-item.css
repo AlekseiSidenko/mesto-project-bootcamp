@@ -1,0 +1,18 @@
+.element__pseudo-item {
+  display: inline-block;
+  vertical-align: middle;
+  width: 22px;
+  height: 19px;
+  grid-area: pseudo-item;
+  background-image: url(../../../images/like-no-active.svg);
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.element__like:checked + .element__pseudo-item {
+  background-image: url(../../../images/like-active.svg);
+}
+
+.element__pseudo-item:hover {
+  opacity: 0.5;
+}

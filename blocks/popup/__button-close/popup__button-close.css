@@ -1,0 +1,15 @@
+.popup__button-close {
+  width: 32px;
+  height: 32px;
+  background-image: url(../../../images/button-close.svg);
+  background-color: #000;
+  margin-top: -40px;
+  margin-left: 438px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.popup__button-close:hover {
+  opacity: 0.6;
+}
