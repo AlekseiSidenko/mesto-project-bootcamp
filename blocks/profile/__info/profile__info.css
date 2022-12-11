@@ -2,8 +2,6 @@
   display: grid;
   max-width: 336px;
   margin: 22px auto auto 30px;
-  justify-content: space-between;
-  flex-wrap: wrap;
   grid-template-columns: max-content 1fr;
   grid-template-rows: repeat(2, auto);
   grid-template-areas:
@@ -13,11 +11,8 @@
 
 @media screen and (max-width: 700px) {
   .profile__info {
-    margin: 22px 0 0 0;
     text-align: center;
-    max-width: 200px;
-    grid-template-areas:
-    "name edit"
-    "profession .";
+    margin: 22px 0 0 0;
+    max-width: 282px;
   }
 }

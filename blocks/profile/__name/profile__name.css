@@ -1,5 +1,5 @@
 .profile__name {
-  max-width: 300px;
+  width: 294px;
   margin: 0;
   color: #FFFFFF;
   font-style: normal;
@@ -14,8 +14,9 @@
 
 @media screen and (max-width: 700px) {
   .profile__name {
-    max-width: 190px;
+    width: 189px;
     font-size: 27px;
     line-height: 33px;
+    margin-left: 46px;
   }
 }

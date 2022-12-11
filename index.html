@@ -4,87 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pages/index.css">
+    <link rel="stylesheet" href="./pages/index.css">
     <title>Место</title>
 </head>
 <body class="root">
   <div class="page">
     <header class="header">
-      <img class="header__logo" src="images/header-logo.svg" alt="Логотип проекта Место">
+      <img class="header__logo" src="./images/header-logo.svg" alt="Логотип проекта Место">
     </header>
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" src="images/profile-avatar.jpg" alt="Аваторка">
+        <img class="profile__avatar" src="./images/profile-avatar.jpg" alt="Аваторка">
         <div class="profile__info">
-          <h2 class="profile__name">Жак-Ив Кусто</h2>
-          <button class="profile__edit-button"></button>
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <button type="button" class="profile__edit-button"></button>
           <p class="profile__profession">Исследователь океана</p>
         </div>
-        <button class="profile__add-button"></button>
-      </section>
-      <section class="popup">
-        <div class="popup__container">
-          <button class="popup__button-close"></button>
-          <h2 class="popup__heading">Редактировать профиль</h2>
-          <input type="text" class="popup__name" placeholder="Жак-Ив Кусто" required>
-          <input type="text" class="popup__profession" placeholder="Исследователь океана" required>
-          <input type="button" class="popup__button-save" value="Сохранить">
-        </div>
+        <button type="button" class="profile__add-button"></button>
       </section>
       <section class="elements-grid">
         <article class="element__item">
-            <img class="element__photo" src="images/element-karachaevsk.jpg" alt="Карачаевск">
-            <span class="element__title">Карачаевск</span>
-            <label>
-              <input class="element__like" type="checkbox">
-              <span class="element__pseudo-item"></span>
-            </label>
+          <img class="element__photo" src="./images/element-karachaevsk.jpg" alt="Карачаевск">
+          <h2 class="element__title">Карачаевск</h2>
+          <button type="button" class="element__like"></button>
         </article>
         <article class="element__item">
-          <img class="element__photo" src="images/element-elbrus.jpg" alt="Гора Эльбрус">
-          <span class="element__title">Гора Эльбрус</span>
-          <label>
-            <input class="element__like" type="checkbox">
-            <span class="element__pseudo-item"></span>
-          </label>
+          <img class="element__photo" src="./images/element-elbrus.jpg" alt="Гора Эльбрус">
+          <h2 class="element__title">Гора Эльбрус</h2>
+          <button type="button" class="element__like"></button>
         </article>
         <article class="element__item">
-          <img class="element__photo" src="images/element-dombai.jpg" alt="Домбай">
-          <span class="element__title">Домбай</span>
-          <label>
-            <input class="element__like" type="checkbox">
-            <span class="element__pseudo-item"></span>
-          </label>
+          <img class="element__photo" src="./images/element-dombai.jpg" alt="Домбай">
+          <h2 class="element__title">Домбай</h2>
+          <button type="button" class="element__like"></button>
         </article>
         <article class="element__item">
-          <img class="element__photo" src="images/element-elbrus.jpg" alt="Гора Эльбрус">
-          <span class="element__title">Гора Эльбрус</span>
-          <label>
-            <input class="element__like" type="checkbox">
-            <span class="element__pseudo-item"></span>
-          </label>
+          <img class="element__photo" src="./images/element-elbrus.jpg" alt="Гора Эльбрус">
+          <h2 class="element__title">Гора Эльбрус</h2>
+          <button type="button" class="element__like"></button>
         </article>
         <article class="element__item">
-          <img class="element__photo" src="images/element-dombai.jpg" alt="Домбай">
-          <span class="element__title">Домбай</span>
-          <label>
-            <input class="element__like" type="checkbox">
-            <span class="element__pseudo-item"></span>
-          </label>
+          <img class="element__photo" src="./images/element-dombai.jpg" alt="Домбай">
+          <h2 class="element__title">Домбай</h2>
+          <button type="button" class="element__like"></button>
         </article>
         <article class="element__item">
-          <img class="element__photo" src="images/element-karachaevsk.jpg" alt="Карачаево-Черкесия">
-          <span class="element__title">Карачаево-Черкесия</span>
-          <label>
-            <input class="element__like" type="checkbox">
-            <span class="element__pseudo-item"></span>
-          </label>
+          <img class="element__photo" src="./images/element-karachaevsk.jpg" alt="Карачаево-Черкесия">
+          <h2 class="element__title">Карачаево-Черкесия</h2>
+          <button type="button" class="element__like"></button>
         </article>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
+    <div class="popup">
+      <div class="popup__container">
+        <button type="button" class="popup__button-close"></button>
+        <h2 class="popup__heading">Редактировать профиль</h2>
+        <form class="popup__form" name="userEdit">
+          <input type="text" name="userEditName" class="popup__input popup__input_name" placeholder="Введите Ваше имя" required>
+          <input type="text" name="userEditProfession" class="popup__input popup__input_profession" placeholder="Введите Вашу профессию" required>
+          <button class="popup__button-save" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
   </div>
 <script src="script.js"></script>
 </body>

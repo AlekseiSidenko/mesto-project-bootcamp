@@ -11,8 +11,8 @@ document.querySelector('.profile__edit-button').addEventListener('click', redact
 document.querySelector('.popup__button-close').addEventListener('click', close);
 
 function editUser() {
-  let name = document.querySelector('.popup__name');
-  let profession = document.querySelector('.popup__profession');
+  let name = document.querySelector('.popup__input_name');
+  let profession = document.querySelector('.popup__input_profession');
 
   document.querySelector('.profile__name').textContent = `${name.value}`;
   document.querySelector('.profile__profession').textContent = `${profession.value}`;

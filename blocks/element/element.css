@@ -1,5 +1,7 @@
 .element__item {
   background-color: #FFFFFF;
+  max-width: 282px;
+  margin: 0 auto 0 auto;
   border-radius: 10px;
   overflow: hidden;
   display: grid;
@@ -7,7 +9,7 @@
   grid-template-rows: 1fr 79px;
   grid-template-areas:
     "photo photo"
-    "title pseudo-item";
+    "title like";
     align-items: center;
     justify-items: flex-start;
 }

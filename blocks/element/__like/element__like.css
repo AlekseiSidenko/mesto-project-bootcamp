@@ -1,7 +1,17 @@
 .element__like {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
+  width: 22px;
+  height: 19px;
+  grid-area: like;
+  background-image: url(../../../images/like-no-active.svg);
+  background-position: center;
+  background-size: cover;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  padding: 0;
+}
+
+.element__like:hover {
+  opacity: 0.5;
 }

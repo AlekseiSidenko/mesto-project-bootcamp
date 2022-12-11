@@ -8,8 +8,5 @@
   white-space: nowrap;
   overflow: hidden;
   grid-area: title;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
   max-width: calc(100% - 35px);
 }
