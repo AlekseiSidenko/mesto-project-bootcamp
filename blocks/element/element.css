@@ -1,7 +1,7 @@
 .element__item {
   background-color: #FFFFFF;
   max-width: 282px;
-  margin: 0 auto 0 auto;
+  margin: 0;
   border-radius: 10px;
   overflow: hidden;
   display: grid;
