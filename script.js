@@ -1,23 +1,36 @@
+const popupElement = document.querySelector('.popup__container')
+const profileName = document.querySelector('.profile__name')
+const profileProfession = document.querySelector('.profile__profession')
+const popupName = document.querySelector('.popup__input_name');
+const popupProfession = document.querySelector('.popup__input_profession');
+const profileEditButton = document.querySelector('.profile__edit-button');
+const popupButtonClose = document.querySelector('.popup__button-close');
+const popupButtonSave = document.querySelector('.popup__button-save');
+
+
+function handleFormSubmit(evt) {
+  evt.preventDefault();
+
+  profileName.textContent = `${popupName.value}`;
+  profileProfession.textContent = `${popupProfession.value}`;
+
+  closePopup()
+}
+
+popupElement.addEventListener('submit', handleFormSubmit);
+
 function redact() {
-  document.querySelector('.popup').style.display = "flex"
+  popupName.value = `${profileName.textContent}`;
+  popupProfession.value = `${profileProfession.textContent}`;
+  document.querySelector('.popup').classList.add('popup_opened')
 };
 
-function close() {
-  document.querySelector('.popup').style.display = "none"
+function closePopup() {
+  document.querySelector('.popup').classList.remove('popup_opened')
 };
 
-document.querySelector('.profile__edit-button').addEventListener('click', redact);
+profileEditButton.addEventListener('click', redact);
 
-document.querySelector('.popup__button-close').addEventListener('click', close);
+popupButtonClose.addEventListener('click', closePopup);
 
-function editUser() {
-  let name = document.querySelector('.popup__input_name');
-  let profession = document.querySelector('.popup__input_profession');
-
-  document.querySelector('.profile__name').textContent = `${name.value}`;
-  document.querySelector('.profile__profession').textContent = `${profession.value}`;
-
-  close();
-};
-
-document.querySelector('.popup__button-save').addEventListener('click', editUser, close);
+popupButtonSave.addEventListener('click', handleFormSubmit);
