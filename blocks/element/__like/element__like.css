@@ -2,7 +2,6 @@
   width: 22px;
   height: 19px;
   grid-area: like;
-  background-image: url(../../../images/like-no-active.svg);
   background-position: center;
   background-size: cover;
   border: none;
