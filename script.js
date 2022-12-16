@@ -93,23 +93,26 @@ const initialCards = [
 
 const cardTemplate = document.querySelector('#card').content;
 const cardsGrid = document.querySelector('.elements-grid');
-const cardElement = cardTemplate.querySelector('.element__item').cloneNode(true);
-const cardElementPicture = cardElement.querySelector('.element__photo');
-const cardElementTitle = cardElement.querySelector('.element__title');
-
-
+//const cardElementPicture = ;
+//const cardElementTitle = ;
 
 function addCard() {
-  initialCards.forEach(function (item) {
-    const cardTemplate = document.querySelector('#card').content;
+  initialCards.forEach(function (element){
     const cardElement = cardTemplate.querySelector('.element__item').cloneNode(true);
-    const cardElementPicture = cardElement.querySelector('.element__photo');
-    const cardElementTitle = cardElement.querySelector('.element__title');
-    cardElementPicture.src = item.link
-    cardElementTitle.textContent = item.name
-    cardsGrid.append(cardElement)
-  });
+    cardElement.querySelector('.element__photo').src = element.link;
+    cardElement.querySelector('.element__title').textContent = element.name;
+    cardsGrid.append(cardElement);
+
+    cardElement.querySelector('.element__like').addEventListener('click', function(evt) {
+      evt.target.classList.toggle('element__like_active');
+    })
+  })
 }
+//
+
+
+
+
 
 addCard()
 

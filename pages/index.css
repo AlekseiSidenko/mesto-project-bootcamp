@@ -34,8 +34,6 @@
 
 @import url(../blocks/element/__like/_active/element__like_active.css);
 
-@import url(../blocks/element/__like/_no-active/element__like_no-active.css);
-
 @import url(../blocks/footer/footer.css);
 
 @import url(../blocks/footer/__copyright/footer__copyright.css);
