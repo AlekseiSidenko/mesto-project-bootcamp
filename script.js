@@ -97,18 +97,25 @@ const cardsGrid = document.querySelector('.elements-grid');
 //const cardElementTitle = ;
 
 function addCard() {
-  initialCards.forEach(function (element){
-    const cardElement = cardTemplate.querySelector('.element__item').cloneNode(true);
-    cardElement.querySelector('.element__photo').src = element.link;
-    cardElement.querySelector('.element__title').textContent = element.name;
-    cardsGrid.append(cardElement);
+ initialCards.forEach(function (element){
+   const cardElement = cardTemplate.querySelector('.element__item').cloneNode(true);
+   cardElement.querySelector('.element__photo').src = element.link;
+   cardElement.querySelector('.element__title').textContent = element.name;
+   cardsGrid.append(cardElement);
 
-    cardElement.querySelector('.element__like').addEventListener('click', function(evt) {
-      evt.target.classList.toggle('element__like_active');
-    })
-  })
+   cardElement.querySelector('.element__like').addEventListener('click', function(evt) {
+     evt.target.classList.toggle('element__like_active');
+   })
+
+   const deleteButtonCard = cardElement.querySelector('.element__trash');
+
+   deleteButtonCard.addEventListener('click', function() {
+    const deleteCard = deleteButtonCard.closest('.element__item')
+    deleteCard.remove()
+   })
+ })
 }
-//
+
 
 
 
