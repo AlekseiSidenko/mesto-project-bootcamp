@@ -88,7 +88,6 @@ const likeCard = (evt) => {
 
 const openPicture = (evt) => {
   document.querySelector('.popup__image').src = evt.target.src;
-  console.log(evt)
   document.querySelector('.popup__caption').textContent = evt.target.closest('.element__item').textContent;
   openPopup(popupPhoto);
 }
