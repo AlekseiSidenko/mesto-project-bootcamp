@@ -53,15 +53,23 @@
             <button type="button" class="popup__button-close"></button>
             <h2 class="popup__heading">Новое место</h2>
             <form class="popup__form popup__form_card" name="addCard">
-              <input type="text" name="userEditName" class="popup__input popup__input_card_title" placeholder="Название" required>
-              <input type="text" name="userEditProfession" class="popup__input popup__input_card_link" placeholder="Сcылка на картинку" required>
+              <input type="text" name="cardName" class="popup__input popup__input_card_title" placeholder="Название" required>
+              <input type="url" name="" class="popup__input popup__input_card_link" placeholder="Сcылка на картинку" required>
               <button class="popup__button-save" type="submit">Создать</button>
             </form>
+          </div>
+        </div>
+        <div class="popup popup_image">
+          <div class="image__container">
+            <button type="button" class="popup__button-close"></button>
+            <img src="./images/element-karachaevsk.jpg" alt="Фотография не загрузилась">
+            <p class="popup__caption"></p>
           </div>
         </div>
       </div>
     </div>
   </div>
-<script src="script.js"></script>
+<script src="./scripts/data.js"></script>
+<script src="./scripts/script.js"></script>
 </body>
 </html>
