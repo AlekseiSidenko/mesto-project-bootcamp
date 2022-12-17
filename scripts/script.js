@@ -11,6 +11,7 @@ const addCardElementButton = document.querySelector('.profile__add-button')
 const popupsContainer = document.querySelector('.popups')
 const popupCardName = document.querySelector('.popup__input_card_title');
 const popupCardLink = document.querySelector('.popup__input_card_link');
+const popupPhoto = document.querySelector('.popup_photo')
 
 
 function handleFormSubmitName(evt) {
@@ -32,7 +33,6 @@ function handleFormSubmitCard(evt) {
     link: `${popupCardLink.value}`
   })
 
-  console.log(initialCards)
 
   closePopup()
 }
@@ -73,30 +73,10 @@ const addCard = (data) => {
   cardElement.querySelector('.element__title').textContent = data.name;
   cardElement.querySelector('.element__trash').addEventListener('click', deleteCard);
   cardElement.querySelector('.element__like').addEventListener('click', likeCard);
+  cardElement.querySelector('.element__photo').addEventListener('click', openPicture);
+
   return cardElement;
 }
-
-
-//  initialCards.forEach(function (element){
-
-
-
-//    cardsGrid.append(cardElement);
-
-//    cardElement.querySelector('.element__like').addEventListener('click', function(evt) {
-//      evt.target.classList.toggle;
-//    })
-
-//    const deleteButtonCard = ;
-
-//     deleteButtonCard.addEventListener('click', function() {
-//     const deleteCard = deleteButtonCard.closest('.element__item')
-//     deleteCard.remove()
-
-
-//    })
-//  })
-// }
 
 const deleteCard = (evt) => {
   evt.target.closest('.element__item').remove();
@@ -106,6 +86,13 @@ const likeCard = (evt) => {
   evt.target.classList.toggle('element__like_active');
 };
 
+const openPicture = (evt) => {
+  document.querySelector('.popup__image').src = evt.target.src;
+  console.log(evt)
+  document.querySelector('.popup__caption').textContent = evt.target.closest('.element__item').textContent;
+  openPopup(popupPhoto);
+}
+
 const createCard = (data) => {
   cardsGrid.prepend(addCard(data))
 };
@@ -113,4 +100,3 @@ const createCard = (data) => {
 for (let i = initialCards.length - 1; i >= 0; i = i - 1) {
   createCard(initialCards[i])
 }
-
