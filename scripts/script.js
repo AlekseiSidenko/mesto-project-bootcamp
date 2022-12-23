@@ -16,10 +16,11 @@ const popupImage = document.querySelector('.popup__image');
 const popupCaption = document.querySelector('.popup__caption');
 const cardTemplate = document.querySelector('#card').content;
 const cardsGrid = document.querySelector('.elements-grid');
+popupName.value = `${profileName.textContent}`;
+popupProfession.value = `${profileProfession.textContent}`;
 
 
 function handleFormSubmitName(evt) {
-  evt.preventDefault();
 
   profileName.textContent = `${popupName.value}`;
   profileProfession.textContent = `${popupProfession.value}`;
@@ -30,7 +31,6 @@ function handleFormSubmitName(evt) {
 popupElementName.addEventListener('submit', handleFormSubmitName);
 
 function handleFormSubmitCard(evt) {
-  evt.preventDefault();
 
   createCard({
     name: `${popupCardName.value}`,
@@ -45,11 +45,13 @@ function handleFormSubmitCard(evt) {
 popupElementCard.addEventListener('submit', handleFormSubmitCard)
 
 function openPopup(popup) {
-  popup.classList.add('popup_opened')
+  popup.classList.add('popup_opened');
+  document.addEventListener('keydown', escListener);
 };
 
 function closePopup() {
-  document.querySelector('.popup_opened').classList.remove('popup_opened')
+  document.querySelector('.popup_opened').classList.remove('popup_opened');
+  document.removeEventListener('keydown', escListener);
 };
 
 profileEditButton.addEventListener('click', function() {
@@ -63,10 +65,16 @@ addCardElementButton.addEventListener('click', function() {
 });
 
 popupsContainer.addEventListener('click', function(evt) {
-  if (evt.target.closest('.popup__button-close')) {
+  if (evt.target.closest('.popup__button-close') || evt.target.classList.contains('popup')) {
     closePopup();
   }
 });
+
+function escListener(evt) {
+    if (evt.key === 'Escape') {
+      closePopup();
+    }
+};
 
 const addCard = (data) => {
   const cardElement = cardTemplate.querySelector('.element__item').cloneNode(true);

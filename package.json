@@ -1,0 +1,19 @@
+{
+  "name": "mesto-project-bootcamp",
+  "version": "0.0.1",
+  "description": "## Мой третий самостоятельный проект на HTML CSS и технологии JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlekseiSidenko/mesto-project-bootcamp.git"
+  },
+  "author": "Aleksei Sidenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlekseiSidenko/mesto-project-bootcamp/issues"
+  },
+  "homepage": "https://github.com/AlekseiSidenko/mesto-project-bootcamp#readme"
+}
