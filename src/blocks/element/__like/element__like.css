@@ -10,6 +10,8 @@
   transition: opacity 0.3s ease;
   cursor: pointer;
   padding: 0;
+  align-self: flex-end;
+  justify-self: center;
 }
 
 .element__like:hover {

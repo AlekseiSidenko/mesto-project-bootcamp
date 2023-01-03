@@ -1,0 +1,9 @@
+.element__like-numbers {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  align-self: flex-start;
+  margin-top: 3px;
+  grid-area: likeNumber;
+  justify-self: center;
+}

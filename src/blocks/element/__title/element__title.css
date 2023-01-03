@@ -8,5 +8,5 @@
   white-space: nowrap;
   overflow: hidden;
   grid-area: title;
-  max-width: calc(100% - 35px);
+  max-width: calc(100% - 21px);
 }

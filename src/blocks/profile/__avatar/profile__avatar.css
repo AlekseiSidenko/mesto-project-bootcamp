@@ -1,4 +1,6 @@
 .profile__avatar {
+  background-size: cover;
+  background-position: center;
   display: block;
   width: 120px;
   height: 120px;
@@ -6,4 +8,10 @@
   object-position: center;
   border-radius: 50%;
 }
+
+ /* .profile__avatar:hover {
+
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+} */
 

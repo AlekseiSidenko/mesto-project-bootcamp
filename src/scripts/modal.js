@@ -1,28 +1,25 @@
-export { closePopup, handleFormSubmitCard, handleFormSubmitName, openPopup, openPicture }
-import { createCard } from "./card.js"
+export { closePopup, handleFormSubmitCard, handleFormSubmitName, handleFormSubmitAvatar, handleFormSubmitDeleteCard, openPopup, openPicture, popupDeleteCard }
+import { profileEdit, avatarEdit, cardServerAdd, cardServerDelete } from "./api.js";
 
 const popupCardName = document.querySelector('.popup__input_card_title');
 const popupCardLink = document.querySelector('.popup__input_card_link');
 const popupPhoto = document.querySelector('.popup_photo');
 const popupImage = document.querySelector('.popup__image');
 const popupCaption = document.querySelector('.popup__caption');
-const profileName = document.querySelector('.profile__name')
-const profileProfession = document.querySelector('.profile__profession')
-const popupName = document.querySelector('.popup__input_name');
-const popupProfession = document.querySelector('.popup__input_profession');
+const profileAvatar = document.querySelector('.profile__avatar')
+const popupAvatar = document.querySelector('.popup__input_avatar_link');
+const popupDelete = document.querySelector('.popup_delete');
 
 function handleFormSubmitName(evt) {
   evt.preventDefault();
-  profileName.textContent = `${popupName.value}`;
-  profileProfession.textContent = `${popupProfession.value}`;
-
+  profileEdit()
   closePopup()
 }
 
 
 function handleFormSubmitCard(evt) {
   evt.preventDefault();
-  createCard({
+  cardServerAdd({
     name: `${popupCardName.value}`,
     link: `${popupCardLink.value}`
   })
@@ -30,6 +27,24 @@ function handleFormSubmitCard(evt) {
   closePopup()
 }
 
+function handleFormSubmitAvatar(evt) {
+  evt.preventDefault()
+  avatarEdit()
+  profileAvatar.src = popupAvatar.value
+  evt.target.reset();
+  closePopup()
+}
+
+function handleFormSubmitDeleteCard() {
+  const elements = Array.from(document.querySelectorAll('.element__item'))
+  elements.forEach((item) => {
+    if (item.id === popupDelete.id) {
+      cardServerDelete(item.id)
+      item.remove()
+    }
+  })
+  closePopup()
+}
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -39,6 +54,7 @@ function openPopup(popup) {
 function closePopup() {
   document.querySelector('.popup_opened').classList.remove('popup_opened');
   document.removeEventListener('keydown', escListener);
+  popupDelete.id = '';
 };
 
 
@@ -53,4 +69,10 @@ function escListener(evt) {
     if (evt.key === 'Escape') {
       closePopup();
     }
+};
+
+const popupDeleteCard = (evt) => {
+  const element = evt.target.closest('.element__item')
+  openPopup(popupDelete)
+  popupDelete.id = element.id
 };

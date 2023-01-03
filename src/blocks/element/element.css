@@ -6,11 +6,12 @@
   border-radius: 10px;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr 44px;
-  grid-template-rows: 1fr 79px;
+  grid-template-columns: 1fr 62px;
+  grid-template-rows: 1fr 41px 38px;
   grid-template-areas:
     "photo photo"
-    "title like";
-    align-items: center;
-    justify-items: flex-start;
+    "title like"
+    "title likeNumber";
+  align-items: center;
+  justify-items: flex-start;
 }
