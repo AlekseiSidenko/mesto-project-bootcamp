@@ -8,11 +8,23 @@ const addCardElementButton = document.querySelector('.profile__add-button');
 const avatarEditButton = document.querySelector('.pofile__avatar-edit')
 const popupUserEdit = document.querySelector('.popup_profile');
 const addCardElement = document.querySelector('.popup_cards');
-const avatarEdit = document.querySelector('.popup_avatar')
+const avatarEdit = document.querySelector('.popup_avatar');
+export const settings = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button-save',
+  inactiveButtonClass: 'popup__button_inactive',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_active'
+}
 
 import '../pages/index.css';
 
 import { closePopup, handleFormSubmitAvatar, handleFormSubmitCard, handleFormSubmitName, handleFormSubmitDeleteCard, openPopup } from "./modal.js";
+
+import { enableValidation } from './validate.js';
+
+import { userLoad } from './api.js';
 
 profileEditButton.addEventListener('click', function() {
   openPopup(popupUserEdit);
@@ -20,10 +32,14 @@ profileEditButton.addEventListener('click', function() {
 
 addCardElementButton.addEventListener('click', function() {
   openPopup(addCardElement)
+  popupsContainer.querySelector('.popup__button-save_card').classList.add('popup__button_inactive');
+  popupsContainer.querySelector('.popup__button-save_card').disabled = true
 });
 
 avatarEditButton.addEventListener('click', function() {
   openPopup(avatarEdit)
+  popupsContainer.querySelector('.popup__button-save_avatar').classList.add('popup__button_inactive');
+  popupsContainer.querySelector('.popup__button-save_avatar').disabled = true
 })
 
 popupsContainer.addEventListener('mousedown', function(evt) {

@@ -52,6 +52,7 @@ function openPopup(popup) {
 };
 
 function closePopup() {
+  if (!document.querySelector('.popup_opened')) return;
   document.querySelector('.popup_opened').classList.remove('popup_opened');
   document.removeEventListener('keydown', escListener);
   popupDelete.id = '';
