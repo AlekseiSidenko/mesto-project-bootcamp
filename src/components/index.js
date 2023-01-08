@@ -48,9 +48,7 @@ Promise.all([getUserInfo(), getCards()])
     profileAvatar.src = userData.avatar;
     popupName.value = userData.name;
     popupProfession.value = userData.about;
-    cards.reverse().forEach((item) => {
-      createCard(item)
-    })
+    cards.reverse().forEach(createCard)
     enableValidation(settings)
   })
   .catch((err) => {

@@ -1,13 +1,11 @@
 import { editProfile, editAvatar, addCardServer, deleteCardServer } from "./api.js";
 import { renderLoading } from "./utils.js";
 import { createCard } from "./card.js";
-import { enableValidation } from "./validate.js";
 import { popupCardName, popupCardLink, profileAvatar, popupAvatar,
   popupDelete, popupName, popupProfession, profileName, profileProfession, popupProfileSaveButton,
-  popupAvatarSaveButton, popupCardLoadButton, popupDeleteCardButton, settings } from "./constants.js";
+  popupAvatarSaveButton, popupCardLoadButton, popupDeleteCardButton } from "./constants.js";
 
 function handleFormSubmitName(evt) {
-  evt.preventDefault();
   renderLoading(true, popupProfileSaveButton)
   editProfile(popupName.value, popupProfession.value)
     .then(res =>  {
@@ -15,7 +13,6 @@ function handleFormSubmitName(evt) {
       profileName.textContent = res.name;
       profileProfession.textContent = res.about;
       closePopup();
-      enableValidation(settings);
     })
     .catch((err) => {
       console.log(`Ошибка: ${err}`)
@@ -26,7 +23,6 @@ function handleFormSubmitName(evt) {
 }
 
 function handleFormSubmitCard(evt) {
-  evt.preventDefault();
   renderLoading(true, popupCardLoadButton, 'Создать', 'Создание...')
   addCardServer({
     name: `${popupCardName.value}`,
@@ -36,7 +32,6 @@ function handleFormSubmitCard(evt) {
       createCard(res)
       evt.target.reset();
       closePopup();
-      enableValidation(settings);
     })
     .catch((err) => {
       console.log(`Ошибка: ${err}`)
@@ -47,14 +42,12 @@ function handleFormSubmitCard(evt) {
 }
 
 function handleFormSubmitAvatar(evt) {
-  evt.preventDefault()
   renderLoading(true, popupAvatarSaveButton)
   editAvatar(popupAvatar.value)
     .then((res) => {
       profileAvatar.src = res.avatar
       evt.target.reset();
       closePopup();
-      enableValidation(settings);
     })
     .catch((err) => {
       console.log(`Ошибка: ${err}`)
@@ -65,7 +58,6 @@ function handleFormSubmitAvatar(evt) {
 }
 
 function handleFormSubmitDeleteCard(evt) {
-  evt.preventDefault()
   renderLoading(true, popupDeleteCardButton, 'Да', 'Удаление...')
     const cardDeleteId = popupDelete.id
     deleteCardServer(popupDelete.id)
